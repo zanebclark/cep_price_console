@@ -1,0 +1,61 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    (): cep_price_console.utils.log_utils.MyLogFormatter
+
+filters:
+  myfilter:
+    (): cep_price_console.utils.log_utils.SystemLogFilter
+
+handlers:
+  debug_file_handler:
+    #    class: logging.handlers.RotatingFileHandler
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: simple
+    filename:
+    mode: 'w'
+    #    maxBytes: 10485760 # 10MB
+    #    backupCount: 20
+    encoding: utf8
+    filters:
+    - myfilter
+
+  info_file_handler:
+    #    class: logging.handlers.RotatingFileHandler
+    class: logging.FileHandler
+    level: INFO
+    formatter: simple
+    filename:
+    mode: 'w'
+    #    maxBytes: 10485760 # 10MB
+    #    backupCount: 20
+    encoding: utf8
+    filters:
+    - myfilter
+
+  error_file_handler:
+    #    class: logging.handlers.RotatingFileHandler
+    class: logging.FileHandler
+    level: ERROR
+    formatter: simple
+    filename:
+    mode: 'w'
+    #    maxBytes: 10485760 # 10MB
+    #    backupCount: 20
+    encoding: utf8
+    filters:
+    - myfilter
+
+loggers:
+  my_module:
+    level: ERROR
+    handlers: [debug_file_handler]
+    propagate: no
+
+root:
+  level: DEBUG
+  handlers: [debug_file_handler, info_file_handler, error_file_handler]
+...
