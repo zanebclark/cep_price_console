@@ -114,7 +114,7 @@ hourly pulls.
     * Initial release
 
 #### [6] Authors:
-* [Zane Clark](hello@zanebclark.com) – [https://github.com/zanebclark](https://github.com/zanebclark/)
+* Zane Clark - hello@zanebclark.com – [https://github.com/zanebclark](https://github.com/zanebclark/)
 
 #### [6] License:
 Distributed under the MIT License. See ``LICENSE`` for more information.
